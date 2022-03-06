@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:visibility="visible"
+        app:titleTextColor="@android:color/white">
+
+        <ImageView
+            android:id="@+id/icGram"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/insta_cam4_foreground"
+            android:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/icLogo"
+            android:layout_width="280dp"
+            android:layout_height="40dp"
+            android:scaleType="centerInside"
+            android:scaleX="2.5"
+            android:scaleY="2.5"
+            android:visibility="visible"
+            app:srcCompat="@mipmap/instagram_foreground" />
+
+
+        <ImageView
+            android:id="@+id/icSend"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@mipmap/insta_send2_foreground"
+            android:visibility="visible" />
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ImageView
+        android:id="@+id/ivPostImage"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="?attr/actionBarSize"
+        app:srcCompat="@mipmap/insta_cam_shadow_foreground" />
+
+    <EditText
+        android:id="@+id/etDescripton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:layout_marginEnd="1dp"
+        android:layout_toEndOf="@+id/ivPostImage"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="@string/description"
+        android:inputType="textMultiLine"
+        android:maxLines="6"
+        android:minLines="5" />
+
+    <Button
+        android:id="@+id/btnSubmit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etDescripton"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        android:text="@string/submit" />
+
+    <Button
+        android:id="@+id/btnCaptureImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ivPostImage"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="167dp"
+        android:layout_toStartOf="@+id/btnSubmit"
+        android:text="@string/take_picture" />
+
+    <ProgressBar
+        android:id="@+id/pbLoading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="invisible" />
+
+
+</RelativeLayout>
