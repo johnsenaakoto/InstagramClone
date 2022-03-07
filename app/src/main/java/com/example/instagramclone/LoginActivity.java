@@ -77,13 +77,13 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void done(ParseException e) {
                 if (e != null) {
-                    Log.e(TAG, "SignUp failed", e);
+                    Log.e(TAG, "Signup failed", e);
                     Toast.makeText(LoginActivity.this, "SignUp Failed", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 // TODO: navigate to the main activity if the user has signed up properly
                 goMainActivity();
-                Toast.makeText(LoginActivity.this, "SignUp Success!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this, "Signup Success!", Toast.LENGTH_SHORT).show();
             }
         });
     }
