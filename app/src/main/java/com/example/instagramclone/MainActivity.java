@@ -15,6 +15,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
@@ -36,11 +37,14 @@ public class MainActivity extends AppCompatActivity {
     public static final int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 42;
     private EditText etDescription;
     private Button btnSubmit;
-    private Button btnCaptureImage;
+    private ImageButton btnCaptureImage;
+    private Button btnLogout;
+    private ImageButton btnProfile;
     private ImageView ivPostImage;
     private File photoFile;
     public String photoFileName = "photo.jpg";
     private ProgressBar progressBar;
+    private int LogOutVisibility =0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,10 +52,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         etDescription = findViewById(R.id.etDescripton);
-        btnCaptureImage = findViewById(R.id.btnCaptureImage);
+        btnCaptureImage = findViewById(R.id.ibCapture);
+        btnProfile = findViewById(R.id.ibLogOut);
         btnSubmit = findViewById(R.id.btnSubmit);
         ivPostImage = findViewById(R.id.ivPostImage);
         progressBar = findViewById(R.id.pbLoading);
+        btnLogout = findViewById(R.id.btnLogout);
 
         // btnCapture onClick launches an implicit intent for the Camera
         btnCaptureImage.setOnClickListener(new View.OnClickListener() {
@@ -85,6 +91,37 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+        // Toggle visibility of btnLogout
+        btnProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (btnLogout.getVisibility() == View.INVISIBLE) {
+                    btnLogout.setVisibility(View.VISIBLE);
+                }
+                else if (btnLogout.getVisibility() == View.VISIBLE) {
+                    btnLogout.setVisibility(View.INVISIBLE);
+                }
+
+            }
+        });
+
+        btnLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.i(TAG, "Clicked Logout button");
+                goLoginActivity();
+            }
+        });
+    }
+
+    // Logs out to LogActivity
+    private void goLoginActivity() {
+        Intent i = new Intent(this, LoginActivity.class);
+        startActivity(i);
+        ParseUser.logOut();
+        ParseUser currentUser = ParseUser.getCurrentUser(); // this will now be null
+        finish();
     }
 
     private void launchCamera() {
@@ -160,6 +197,7 @@ public class MainActivity extends AppCompatActivity {
                 if (e != null) {
                     Log.e(TAG, "Error while saving: " + e);
                     Toast.makeText(MainActivity.this, "Error while saving", Toast.LENGTH_SHORT).show();
+                    progressBar.setVisibility(ProgressBar.INVISIBLE);
                     return;
                 }
                 Log.i(TAG, "Post save was successful!");
