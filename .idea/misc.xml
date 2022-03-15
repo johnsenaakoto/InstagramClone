@@ -3,10 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/capture_test.xml" value="0.31145833333333334" />
+        <entry key="app/src/main/res/drawable/home_test.xml" value="0.31145833333333334" />
         <entry key="app/src/main/res/drawable/insta_cam2_foreground.xml" value="0.1546875" />
         <entry key="app/src/main/res/drawable/insta_logo_background.xml" value="0.1546875" />
+        <entry key="app/src/main/res/drawable/profile_test.xml" value="0.31145833333333334" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_compose.xml" value="0.28125" />
+        <entry key="app/src/main/res/layout/fragment_post.xml" value="0.29583333333333334" />
+        <entry key="app/src/main/res/layout/item_post.xml" value="0.25" />
+        <entry key="app/src/main/res/menu/menu_bottom_navigation.xml" value="0.2953125" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/insta_cam.xml" value="0.1546875" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/insta_logo.xml" value="0.1546875" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/insta_logo_round.xml" value="0.17447916666666666" />

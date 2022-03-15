@@ -34,111 +34,46 @@
             app:srcCompat="@mipmap/instagram_foreground" />
 
 
-        <ImageView
-            android:id="@+id/icSend"
+        <ImageButton
+            android:id="@+id/ibLogOut"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@mipmap/insta_send2_foreground"
+            android:background="?attr/colorPrimary"
+            android:src="@drawable/ic_logout"
             android:visibility="visible" />
 
 
     </androidx.appcompat.widget.Toolbar>
 
-    <ImageView
-        android:id="@+id/ivPostImage"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="?attr/actionBarSize"
-        app:srcCompat="@mipmap/insta_cam_shadow_foreground" />
+    <FrameLayout
+        android:id="@+id/flContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottomNavigation"
+        android:layout_below="@+id/toolbar"
+        >
 
-    <EditText
-        android:id="@+id/etDescripton"
-        android:layout_width="wrap_content"
-        android:layout_height="150dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="?attr/actionBarSize"
-        android:layout_marginEnd="1dp"
-        android:layout_toEndOf="@+id/ivPostImage"
-        android:ems="10"
-        android:gravity="start|top"
-        android:hint="@string/description"
-        android:inputType="textMultiLine"
-        android:maxLines="6"
-        android:minLines="5" />
+        <Button
+            android:id="@+id/btnLogout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="290dp"
+            android:layout_marginTop="5dp"
+            android:text="Logout"
+            android:visibility="invisible" />
 
-    <Button
-        android:id="@+id/btnSubmit"
-        android:layout_width="wrap_content"
+    </FrameLayout>
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/etDescripton"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="10dp"
-        android:text="@string/submit" />
-
-    <Button
-        android:id="@+id/btnLogout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/ibLogOut"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="15dp"
-        android:text="Logout"
-        android:visibility="invisible" />
-
-
-    <ProgressBar
-        android:id="@+id/pbLoading"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:visibility="invisible" />
-
-
-    <ImageButton
-        android:id="@+id/ibHome"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="40dp"
-        android:layout_marginBottom="14dp"
-        android:src="@drawable/ic_home2"
-        tools:ignore="SpeakableTextPresentCheck"
-        android:background="@android:color/transparent"
-        tools:srcCompat="@drawable/ic_home2" />
-
-    <ImageButton
-        android:id="@+id/ibCapture"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="175dp"
-        android:layout_marginBottom="14dp"
-        android:background="@android:color/transparent"
-        android:src="@drawable/ic_capture2"
-        tools:ignore="SpeakableTextPresentCheck"
-        tools:srcCompat="@drawable/ic_capture2" />
-
-    <ImageButton
-        android:id="@+id/ibLogOut"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="300dp"
-        android:layout_marginBottom="14dp"
-        android:background="@android:color/transparent"
-        android:src="@drawable/ic_profile2"
-        tools:ignore="SpeakableTextPresentCheck"
-        tools:srcCompat="@drawable/ic_profile2" />
+        app:itemBackground="@color/white"
+        app:itemIconTint="@color/black"
+        app:itemTextColor="@color/black"
+        app:menu="@menu/menu_bottom_navigation" />
 
 
 </RelativeLayout>

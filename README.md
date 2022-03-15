@@ -1,4 +1,4 @@
-# Project 4 Unit 1 - *Simple Instagram*
+# Project 3 Unit 6 - *Simple Instagram*
 
 **Simple Instagram** is an android clone of the widely known Instagram app that utilizes a Parser backend for storing users and posts.
 Submitted by: **John Sena Akoto**
@@ -9,16 +9,14 @@ Time spent: **7** hours spent in total
 
 The following **required** functionality is completed:
 
-* [x] User can **sign up/into Instagram using Parse authentication**
-* [x] User can **log in and log out of their account**
-* [x] Current signed in user is **persisted across app restarts**
-* [x] User can **can take a photo, add caption, and post it**
+* [x] User can **view the last 20 posts**
+* [x] User can **viewing all posts (feed view), compose (capture photos form camera) and profile tabs (posts made) using fragments and a Bottom Navigation View**
+* [x] User can **can pull to refresh the last 20 posts**
 
 
 The following **optional** features are implemented:
 * [x] User sees **app icon in home screen and styled launch screen that resembles real Instagram page**
 * [x] App has been **instagram branded**
-* [x] App shows **indeterminate progress bar** while the post is being uploaded to Parse
 
 
 
